@@ -13,16 +13,14 @@
 <style>
 /* ================= RESET & VARIABLES ================= */
 :root {
-  --bg-color: #F7F4EE;       /* کرم گرم پس‌زمینه */
-  --card-bg: #FFFFFF;        /* سفید خالص برای کارت */
-  --text-main: #3A4A3F;      /* سبز تیره/ذغالی برای متن */
-  --text-light: #7A8C7E;     /* سبز مریم‌گلی ملایم برای متن‌های فرعی */
+  --bg-color: #F7F4EE;       /* کرم گرم */
+  --card-bg: #FFFFFF;        /* سفید خالص */
+  --text-main: #3A4A3F;      /* سبز تیره/ذغالی */
+  --text-light: #7A8C7E;     /* سبز مریم‌گلی ملایم */
   --sage: #8FA68E;           /* سبز مریم‌گلی اصلی */
-  --sage-dark: #6B826B;      /* سبز مریم‌گلی تیره برای هاور */
-  --wood: #D8B08C;           /* چوبی روشن */
+  --sage-dark: #6B826B;      /* سبز مریم‌گلی تیره */
   --wood-light: #F2EBE1;     /* چوبی خیلی روشن */
-  --peach: #E6A68A;          /* هلویی/تراکوتا برای اینستاگرام */
-  --peach-dark: #D27D5C;
+  --peach: #E6A68A;          /* هلویی/تراکوتا */
   --shadow-sm: 0 4px 12px rgba(58, 74, 63, 0.05);
   --shadow-md: 0 12px 24px rgba(58, 74, 63, 0.08);
   --shadow-lg: 0 24px 48px rgba(58, 74, 63, 0.12);
@@ -240,27 +238,6 @@ body {
   transform: translateY(0) scale(1);
 }
 
-.modal-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-color);
-  color: var(--sage);
-  border: 1px solid var(--wood-light);
-}
-
-.modal-icon svg {
-  width: 26px;
-  height: 26px;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  fill: none;
-}
-
 .modal-title {
   font-size: 17px;
   font-weight: 700;
@@ -443,28 +420,14 @@ body {
   <p class="footer">فروشگاه ساحل چوب — بابل</p>
 </main>
 
-<!-- ================= MODAL: ADDRESS ================= -->
-<div class="modal" id="addressModal" aria-hidden="true">
+<!-- ================= MODAL: ADDRESS & MAPS ================= -->
+<div class="modal" id="mapModal" aria-hidden="true">
   <div class="modal-box" role="dialog" aria-modal="true">
-    <div class="modal-icon">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-        <circle cx="12" cy="10" r="3"/>
-      </svg>
-    </div>
-    <h3 class="modal-title">آدرس فروشگاه</h3>
+    <h3 class="modal-title">آدرس و مسیریابی</h3>
     <p class="modal-text">
       بابل، امیرکلا، جنب میدان امام علی،<br>
       فروشگاه ساحل چوب
     </p>
-    <button class="btn-close" id="closeAddress" type="button">بستن</button>
-  </div>
-</div>
-
-<!-- ================= MODAL: MAPS ================= -->
-<div class="modal" id="mapModal" aria-hidden="true">
-  <div class="modal-box" role="dialog" aria-modal="true">
-    <h3 class="modal-title" style="margin-bottom: 16px;">موقعیت روی نقشه</h3>
     
     <div class="map-tabs">
       <button class="tab-btn active" data-tab="gmap">گوگل مپ</button>
@@ -495,83 +458,6 @@ body {
 </div>
 
 <script>
-/* ---------- MODALS ---------- */
-const addressModal = document.getElementById('addressModal');
-const mapModal = document.getElementById('mapModal');
-
-function openModal(modal) {
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(modal) {
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
-
-// Address Modal
-document.getElementById('openAddress').addEventListener('click', () => openModal(addressModal));
-document.getElementById('closeAddress').addEventListener('click', () => closeModal(addressModal));
-addressModal.addEventListener('click', (e) => { if (e.target === addressModal) closeModal(addressModal); });
-
-// Map Modal (Triggered by the Address button, or you can add a separate button. 
-// Based on request "مسیریابی ... داخل دکمش باشه", we'll open the map modal when the user clicks the address button, 
-// and they can see the address first, then click "مشاهده روی نقشه" or we can just open the map modal directly.
-// To keep it minimal, we'll open the map modal from the address modal, or combine them.
-// Actually, the user asked for a popup for the address, and a popup for the map. Let's make the "آدرس و مسیریابی" button open the Address Modal, 
-// and inside the Address Modal, add a button "مشاهده روی نقشه" that opens the Map Modal.
-// Let's adjust the HTML to add that button inside the address modal.
-// Wait, the user said: "مسیریابی همینطوری وسط صفحه نباشه داخل دکمش باشه اگه کسی دکمشو زد پاپ آپ بیاد بالا"
-// This means the map itself should be inside a popup triggered by a button.
-// So I will create a separate button for Maps. Or I can make the Address button open a popup that has the address AND a button to open the map popup.
-// Let's create a dedicated "موقعیت روی نقشه" button in the actions grid, OR open the map modal directly from the address modal.
-// To be minimal and clean, let's just make the Address button open the Map Modal, and show the address inside the Map Modal! That's the most minimal approach.
-// Let's combine them: One button "آدرس و مسیریابی" that opens a popup containing the address at the top, and the map tabs below it.
-
-// Let's refactor the Address Modal to include the map tabs.
-// Oh wait, the user said "مسیریابی ... داخل دکمش باشه اگه کسی دکمشو زد پاپ آپ بیاد بالا". 
-// This means the map should be inside a popup. The address button should trigger it.
-// Let's put the address text inside the map popup, and remove the separate address modal.
-// Or keep the address modal, and add a "مسیریابی" button inside it that opens the map modal.
-// Let's keep it simple: The "آدرس و مسیریابی" button opens the Map Modal, and the address is displayed inside the Map Modal as well.
-// Let's modify the Map Modal to show the address at the top.
-
-// Update Map Modal HTML:
-// <h3 class="modal-title">آدرس و مسیریابی</h3>
-// <p class="modal-text" style="margin-bottom: 16px;">بابل، امیرکلا، جنب میدان امام علی، فروشگاه ساحل چوب</p>
-// <div class="map-tabs">...
-
-// Then we don't need the separate address modal. This is more minimal.
-
-// Let's do that. Remove the separate address modal, and put the address inside the map modal.
-
-// Update the button text to "آدرس و مسیریابی" and it opens the map modal.
-// Remove the separate address modal from HTML.
-// Update the JS to open the map modal.
-// Let's update the code accordingly.
-
-// Let's modify the JS:
-document.getElementById('openAddress').addEventListener('click', () => openModal(mapModal));
-document.getElementById('closeMap').addEventListener('click', () => closeModal(mapModal));
-mapModal.addEventListener('click', (e) => { if (e.target === mapModal) closeModal(mapModal); });
-
-// Also add the address text inside the map modal.
-// I will add it inside the map modal HTML.
-
-// Let's update the HTML for the map modal:
-// <div class="modal-box" role="dialog" aria-modal="true">
-//   <h3 class="modal-title">آدرس و مسیریابی</h3>
-//   <p class="modal-text" style="margin-bottom: 16px;">بابل، امیرکلا، جنب میدان امام علی،<br>فروشگاه ساحل چوب</p>
-//   <div class="map-tabs">...</div>
-//   ...
-// </div>
-
-// And remove the separate address modal.
-
-// Let's rewrite the script section accordingly.
-
 /* ---------- MAP TABS ---------- */
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
@@ -584,7 +470,7 @@ tabButtons.forEach(btn => {
   });
 });
 
-// Modal Logic
+/* ---------- MODAL LOGIC ---------- */
 const mapModal = document.getElementById('mapModal');
 const openAddressBtn = document.getElementById('openAddress');
 const closeMapBtn = document.getElementById('closeMap');
