@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F7F4EE">
+<title>ساحل چوب | دکوراسیون اتاق کودک، نوجوان و جوان</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET & VARIABLES ================= */
+:root {
+  --bg-color: #F7F4EE;       /* کرم گرم پس‌زمینه */
+  --card-bg: #FFFFFF;        /* سفید خالص برای کارت */
+  --text-main: #3A4A3F;      /* سبز تیره/ذغالی برای متن */
+  --text-light: #7A8C7E;     /* سبز مریم‌گلی ملایم برای متن‌های فرعی */
+  --sage: #8FA68E;           /* سبز مریم‌گلی اصلی */
+  --sage-dark: #6B826B;      /* سبز مریم‌گلی تیره برای هاور */
+  --wood: #D8B08C;           /* چوبی روشن */
+  --wood-light: #F2EBE1;     /* چوبی خیلی روشن */
+  --peach: #E6A68A;          /* هلویی/تراکوتا برای اینستاگرام */
+  --peach-dark: #D27D5C;
+  --shadow-sm: 0 4px 12px rgba(58, 74, 63, 0.05);
+  --shadow-md: 0 12px 24px rgba(58, 74, 63, 0.08);
+  --shadow-lg: 0 24px 48px rgba(58, 74, 63, 0.12);
+  --radius: 24px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+/* ================= CARD ================= */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 36px 24px 28px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(216, 176, 140, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ================= LOGO ================= */
+.logo-wrap {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: var(--bg-color);
+  border: 2px solid var(--wood-light);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+}
+
+.logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* ================= TEXT ================= */
+.store-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* ================= MAIN BUTTON (CALL) ================= */
+.btn-call {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px;
+  background: var(--sage);
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(143, 166, 142, 0.25);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-call::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-call:hover {
+  background: var(--sage-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(143, 166, 142, 0.35);
+}
+
+.btn-call:hover::after { opacity: 1; }
+.btn-call:active { transform: translateY(0); }
+
+.btn-call svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ================= ACTION GRID ================= */
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 8px;
+  background: var(--bg-color);
+  border: 1px solid rgba(216, 176, 140, 0.2);
+  border-radius: 16px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.action-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--sage);
+  stroke-width: 1.8;
+  fill: none;
+  transition: stroke 0.25s;
+}
+
+.action-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--sage);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.action-btn:active { transform: translateY(0); }
+
+/* Instagram Specific */
+.action-btn.instagram svg { stroke: var(--peach); }
+.action-btn.instagram:hover { border-color: var(--peach); }
+
+/* ================= MODALS ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(58, 74, 63, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+  text-align: center;
+}
+
+.modal.open .modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.modal-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--sage);
+  border: 1px solid var(--wood-light);
+}
+
+.modal-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.modal-text {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--text-light);
+  background: var(--bg-color);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(216, 176, 140, 0.1);
+}
+
+.btn-close {
+  width: 100%;
+  padding: 14px;
+  background: var(--sage);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 12px rgba(143, 166, 142, 0.2);
+}
+
+.btn-close:hover {
+  background: var(--sage-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(143, 166, 142, 0.3);
+}
+
+/* ================= MAP TABS (INSIDE MODAL) ================= */
+.map-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-color);
+  padding: 5px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(216, 176, 140, 0.15);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 4px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn.active {
+  background: #FFFFFF;
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(58, 74, 63, 0.08);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.map-frame {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 176, 140, 0.2);
+  background: var(--bg-color);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  margin-top: 28px;
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 380px) {
+  .card { padding: 28px 16px 20px; }
+  .logo-wrap { width: 90px; height: 90px; }
+  .store-name { font-size: 18px; }
+  .tagline { font-size: 13px; margin-bottom: 22px; }
+  .btn-call { padding: 16px; font-size: 15px; }
+  .action-btn { padding: 14px 6px; font-size: 11px; gap: 8px; }
+  .action-btn svg { width: 20px; height: 20px; }
+  .modal-box { padding: 24px 18px; }
+  .map-frame { aspect-ratio: 1/1; }
+}
+</style>
+</head>
+<body>
+
+<main class="card">
+  
+  <!-- Logo -->
+  <div class="logo-wrap">
+    <img src="Logo.png" alt="لوگو فروشگاه ساحل چوب">
+  </div>
+
+  <!-- Store Name & Tagline -->
+  <h1 class="store-name">ساحل چوب</h1>
+  <p class="tagline">دکوراسیون اتاق کودک، نوجوان و جوان</p>
+
+  <!-- Call Button -->
+  <a class="btn-call" href="tel:01132399905">
+    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>تماس با دفتر فروشگاه</span>
+  </a>
+
+  <!-- Action Buttons -->
+  <div class="actions">
+    
+    <!-- Save Contact -->
+    <button class="action-btn" id="saveContact" type="button">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <line x1="19" y1="8" x2="19" y2="14"/>
+        <line x1="22" y1="11" x2="16" y2="11"/>
+      </svg>
+      <span>ذخیره مخاطب</span>
+    </button>
+
+    <!-- Address & Routing (Opens Modal) -->
+    <button class="action-btn" id="openAddress" type="button">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span>آدرس و مسیریابی</span>
+    </button>
+
+    <!-- Instagram -->
+    <a class="action-btn instagram" href="https://instagram.com/sahelchoob_babol" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      <span>اینستاگرام</span>
+    </a>
+
+  </div>
+
+  <p class="footer">فروشگاه ساحل چوب — بابل</p>
+</main>
+
+<!-- ================= MODAL: ADDRESS ================= -->
+<div class="modal" id="addressModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+    </div>
+    <h3 class="modal-title">آدرس فروشگاه</h3>
+    <p class="modal-text">
+      بابل، امیرکلا، جنب میدان امام علی،<br>
+      فروشگاه ساحل چوب
+    </p>
+    <button class="btn-close" id="closeAddress" type="button">بستن</button>
+  </div>
+</div>
+
+<!-- ================= MODAL: MAPS ================= -->
+<div class="modal" id="mapModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <h3 class="modal-title" style="margin-bottom: 16px;">موقعیت روی نقشه</h3>
+    
+    <div class="map-tabs">
+      <button class="tab-btn active" data-tab="gmap">گوگل مپ</button>
+      <button class="tab-btn" data-tab="neshan">نشان</button>
+      <button class="tab-btn" data-tab="balad">بلد</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-gmap">
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d550.2414672813616!2d52.673081242685655!3d36.58202456295432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8f87392e3670e5%3A0xd4b827ffb558d566!2ssahelchoob!5e0!3m2!1sen!2s!4v1791446158968!5m2!1sen!2s" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-neshan">
+      <div class="map-frame">
+        <iframe src="https://neshan.org/maps/iframe/places/sbfZmkWFLQ02/36.582007/52.673256" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-balad">
+      <div class="map-frame">
+        <iframe src="https://balad.ir/embed?p=56kCsSCg40tVqv" allowfullscreen loading="lazy" tabindex="0"></iframe>
+      </div>
+    </div>
+
+    <button class="btn-close" id="closeMap" type="button" style="margin-top: 16px;">بستن</button>
+  </div>
+</div>
+
+<script>
+/* ---------- MODALS ---------- */
+const addressModal = document.getElementById('addressModal');
+const mapModal = document.getElementById('mapModal');
+
+function openModal(modal) {
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modal) {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Address Modal
+document.getElementById('openAddress').addEventListener('click', () => openModal(addressModal));
+document.getElementById('closeAddress').addEventListener('click', () => closeModal(addressModal));
+addressModal.addEventListener('click', (e) => { if (e.target === addressModal) closeModal(addressModal); });
+
+// Map Modal (Triggered by the Address button, or you can add a separate button. 
+// Based on request "مسیریابی ... داخل دکمش باشه", we'll open the map modal when the user clicks the address button, 
+// and they can see the address first, then click "مشاهده روی نقشه" or we can just open the map modal directly.
+// To keep it minimal, we'll open the map modal from the address modal, or combine them.
+// Actually, the user asked for a popup for the address, and a popup for the map. Let's make the "آدرس و مسیریابی" button open the Address Modal, 
+// and inside the Address Modal, add a button "مشاهده روی نقشه" that opens the Map Modal.
+// Let's adjust the HTML to add that button inside the address modal.
+// Wait, the user said: "مسیریابی همینطوری وسط صفحه نباشه داخل دکمش باشه اگه کسی دکمشو زد پاپ آپ بیاد بالا"
+// This means the map itself should be inside a popup triggered by a button.
+// So I will create a separate button for Maps. Or I can make the Address button open a popup that has the address AND a button to open the map popup.
+// Let's create a dedicated "موقعیت روی نقشه" button in the actions grid, OR open the map modal directly from the address modal.
+// To be minimal and clean, let's just make the Address button open the Map Modal, and show the address inside the Map Modal! That's the most minimal approach.
+// Let's combine them: One button "آدرس و مسیریابی" that opens a popup containing the address at the top, and the map tabs below it.
+
+// Let's refactor the Address Modal to include the map tabs.
+// Oh wait, the user said "مسیریابی ... داخل دکمش باشه اگه کسی دکمشو زد پاپ آپ بیاد بالا". 
+// This means the map should be inside a popup. The address button should trigger it.
+// Let's put the address text inside the map popup, and remove the separate address modal.
+// Or keep the address modal, and add a "مسیریابی" button inside it that opens the map modal.
+// Let's keep it simple: The "آدرس و مسیریابی" button opens the Map Modal, and the address is displayed inside the Map Modal as well.
+// Let's modify the Map Modal to show the address at the top.
+
+// Update Map Modal HTML:
+// <h3 class="modal-title">آدرس و مسیریابی</h3>
+// <p class="modal-text" style="margin-bottom: 16px;">بابل، امیرکلا، جنب میدان امام علی، فروشگاه ساحل چوب</p>
+// <div class="map-tabs">...
+
+// Then we don't need the separate address modal. This is more minimal.
+
+// Let's do that. Remove the separate address modal, and put the address inside the map modal.
+
+// Update the button text to "آدرس و مسیریابی" and it opens the map modal.
+// Remove the separate address modal from HTML.
+// Update the JS to open the map modal.
+// Let's update the code accordingly.
+
+// Let's modify the JS:
+document.getElementById('openAddress').addEventListener('click', () => openModal(mapModal));
+document.getElementById('closeMap').addEventListener('click', () => closeModal(mapModal));
+mapModal.addEventListener('click', (e) => { if (e.target === mapModal) closeModal(mapModal); });
+
+// Also add the address text inside the map modal.
+// I will add it inside the map modal HTML.
+
+// Let's update the HTML for the map modal:
+// <div class="modal-box" role="dialog" aria-modal="true">
+//   <h3 class="modal-title">آدرس و مسیریابی</h3>
+//   <p class="modal-text" style="margin-bottom: 16px;">بابل، امیرکلا، جنب میدان امام علی،<br>فروشگاه ساحل چوب</p>
+//   <div class="map-tabs">...</div>
+//   ...
+// </div>
+
+// And remove the separate address modal.
+
+// Let's rewrite the script section accordingly.
+
+/* ---------- MAP TABS ---------- */
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    tabButtons.forEach(b => b.classList.toggle('active', b === btn));
+    tabPanels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + target));
+  });
+});
+
+// Modal Logic
+const mapModal = document.getElementById('mapModal');
+const openAddressBtn = document.getElementById('openAddress');
+const closeMapBtn = document.getElementById('closeMap');
+
+function openModal() {
+  mapModal.classList.add('open');
+  mapModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  mapModal.classList.remove('open');
+  mapModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+openAddressBtn.addEventListener('click', openModal);
+closeMapBtn.addEventListener('click', closeModal);
+mapModal.addEventListener('click', (e) => { if (e.target === mapModal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+/* ---------- SAVE CONTACT (vCard) ---------- */
+document.getElementById('saveContact').addEventListener('click', () => {
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:;فروشگاه ساحل چوب;;;',
+    'FN:فروشگاه ساحل چوب',
+    'ORG:ساحل چوب - دکوراسیون اتاق کودک، نوجوان و جوان',
+    'TEL;TYPE=WORK,VOICE:01132399905',
+    'ADR;TYPE=WORK:;;بابل، امیرکلا، جنب میدان امام علی، فروشگاه ساحل چوب;بابل;مازندران;;ایران',
+    'NOTE:دکوراسیون اتاق کودک، نوجوان و جوان',
+    'END:VCARD'
+  ].join('\r\n');
+
+  const blob = new Blob(['\uFEFF' + vcard], { type: 'text/vcard;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'sahel-choob.vcf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+});
+</script>
+
+</body>
+</html>
